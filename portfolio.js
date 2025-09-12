@@ -35,3 +35,20 @@
             animateProgressBar(jsBar, jsTarget, jsPercentage);
             animateProgressBar(figmaBar, figmaTarget, figmaPercentage);
         });
+
+// Get all buttons with the "View Resume" text
+const resumeButtons = document.querySelectorAll('.button');
+
+// Get the resume container
+const resumeContainer = document.querySelector('.resume-container');
+
+// Loop through each button and add a click event listener
+resumeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Prevent the default behavior of the link (if it's a link)
+        e.preventDefault();
+        
+        // Toggle the 'hidden' class on the resume container
+        resumeContainer.classList.toggle('hidden');
+    });
+});
