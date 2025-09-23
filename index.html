@@ -3,119 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Portfolio</title>
     <link rel="stylesheet" href="portfolio.css">
 
 </head>
 <body>
 
-    
-
-    <nav class="navbar">
-        <a href="#" class="logo">Portfolio.</a>
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#contact">Contact me</a></li>
-        <li><button class="button">View Resume <i class="fa-solid fa-briefcase"></i></button></li>
-    </ul>
-    </nav>
-
-    <div class="resume-container hidden">
-    <div class="resume-header">
-        <h1>Namirembe Redemptor</h1>
-        <p>Frontend Developer & UI Designer</p>
+    <!-- Loading Spinner Overlay -->
+    <div class="atom-container">
+        <div class="atom">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
     </div>
-    <div class="resume-section">
-        <h2>Work Experience</h2>
-        <div class="job-entry">
-            <h3>Frontend Developer</h3>
-            <p class="job-date">Present</p>
-            <ul>
-                <li>Currently going through a bootcamp where i am currently learning the fundamentals of web development.</li>
-                <li>Optimized web applications for maximum speed and scalability.</li>
+    <!-- End Loading Spinner Overlay -->
+
+    <!-- Main Website Content -->
+    <div class="main-content">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#contact">Contact me</a></li>
+                <li><button class="button">View Resume <i class="fa-solid fa-briefcase"></i></button></li>
             </ul>
+        </nav>
+
+        <div class="resume-container hidden">
+            <div class="resume-header">
+                <h1>Namirembe Redemptor</h1>
+                <p>Frontend Developer & UI Designer</p>
+            </div>
+            <div class="resume-section">
+                <h2>Work Experience</h2>
+                <div class="job-entry">
+                    <h3>Frontend Developer</h3>
+                    <p class="job-date">Present</p>
+                    <ul>
+                        <li>Currently going through a bootcamp where i am currently learning the fundamentals of web development.</li>
+                        <li>Optimized web applications for maximum speed and scalability.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h2>Education</h2>
+                <div class="education-entry">
+                    <h3>Bachelors in Electrical Engineering</h3>
+                    <p class="education-date">2023 to date</p>
+                    <p>Kyambogo University</p>
+                </div>
+                <div class="education-entry">
+                    <h3>UACE and UCE</h3>
+                    <p class="education-date">2016-2022</p>
+                    <p>Our Lady of Africa SS Namilyango</p>
+                </div>
+                <div class="education-entry">
+                    <h3>PLE</h3>
+                    <p class="education-date">2015-2008</p>
+                    <p>Kampala Parent's School</p>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                    <li><strong>UI/UX:</strong> Figma</li>
+                    <li><strong>Tools:</strong> Git, npm, VS Code</li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="resume-section">
-        <h2>Education</h2>
-        <div class="education-entry">
-            <h3>Bachelors in Electrical Engineering</h3>
-            <p class="education-date">2023 to date</p>
-            <p>Kyambogo University</p>
+
+        <div class="intro" id="home">
+            <h3>Hi, I am <span class="text">Namirembe Redemptor</span></h3>
+            <p>A seasoned <span class="name" style="--i:2;" data-text="Frontend Developer"><span>Frontend Developer</span></span>
+            <span class="name" style="--i:1;" data-text="Designer"><span>Designer</span></span><br>
+            transforming ideas into stunning<br>digital experiences. Let's create something amazing!</p>
+
+            <div class="socialmedia">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <h3>SERVICES</h3>
+            <p>What <span class="text">I do</span></p>
         </div>
 
-         <div class="education-entry">
-            <h3>UACE and UCE</h3>
-            <p class="education-date">2016-2022</p>
-            <p>Our Lady of Africa SS Namilyango</p>
+        <div class="do" id="services">
+            <div class="contain" style="--color: #ffd23f;">
+                <i class="fa-solid fa-code"></i>
+                <h4 class="title">Web Development</h4>
+                <p class="describe">I use my knowledge of various<br>programming languages such as HTML,<br>CSS and Javascript to build<br>digital solutions for users.</p>
+            </div>
+
+            <div class="contain" style="--color: #ef476f;">
+                <i class="fa-brands fa-sketch"></i>
+                <h4 class="title">UI Design</h4>
+                <p class="describe">Crafting user-centric digital experiences<br>that seamlessly blend aesthetics and<br>functionality. Professional in user centered<br>design and responsive interfaces.</p>
+            </div>
+
+            <div class="contain" style="--color: #00a6ed;">
+                <i class="fa-solid fa-pen-fancy"></i>
+                <h4 class="title">Content Writing</h4>
+                <p class="describe">Weaving impactful narratives and<br>delivering engaging content that resonates<br>with readers.Skillfully combining creativity<br>with research to create compelling pieces</p>
+            </div>
+            <hr>
         </div>
 
-         <div class="education-entry">
-            <h3>PLE</h3>
-            <p class="education-date">2015-2008</p>
-            <p>Kampala Parent's School</p>
-        </div>
-    </div>
-    <div class="resume-section">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-            <li><strong>UI/UX:</strong> Figma</li>
-            <li><strong>Tools:</strong> Git, npm, VS Code</li>
-        </ul>
-    </div>
-</div>
-
-    <div class="intro" id="home">
-        <h3>Hi, I am <class class="text">Namirembe Redemptor</class></h3>
-        <p>A seasoned <class class="name" style="--i:2;" data-text="Frontend Developer"><span>Frontend Developer</span></class>
-        <class class="name" style="--i:1;" data-text="Designer"><span>Designer</span></class>
-         transforming ideas into stunning<br>digital experiences. Let's create something amazing!</p>
-
-        <div class="socialmedia">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-
-        <h3>SERVICES</h3>
-        <p>What <class class="text">I do</class></p>
-    </div>
-
-    <div class="do" id="services">
-         <div class="contain" style="--color: #ffd23f;">
-            <i class="fa-solid fa-code"></i>
-            <h4 class="title">Web Development</h4>
-            <p class="describe">I use my knowledge of various<br>programming languages such as HTML,<br>CSS and Javascript to build<br>digital solutions for users.</p>            
-         </div>
-        
-         <div class="contain" style="--color: #ef476f;">
-            <i class="fa-brands fa-sketch"></i>
-            <h4 class="title">UI Design</h4>
-            <p class="describe">Crafting user-centric digital experiences<br>that seamlessly blend aesthetics and<br>functionality. Professional in user centered<br>design and responsive interfaces.</p>
-         </div>
-
-         <div class="contain" style="--color: #00a6ed;">
-            <i class="fa-solid fa-pen-fancy"></i>
-            <h4 class="title">Content Writing</h4>
-            <p class="describe">Weaving impactful narratives and<br>delivering engaging content that resonates<br>with readers.Skillfully combining creativity<br>with research to create compelling pieces</p>
-         </div>
-         <hr>
-    </div>
-
-   
-    <div class="me" id="about">
-        <div class="head">
-        <h2>MY BIO</h2>
-        <h3>About <class class="text">me</class></h3>
-        </div>
+        <div class="me" id="about">
+            <div class="head">
+                <h2>MY BIO</h2>
+                <h3>About <span class="text">me</span></h3>
+            </div>
             <div class="photo">
-                <img class="content" src="/me.jpg">
+                <img class="content" src="/me.jpg" alt="A placeholder image of Namirembe Redemptor">
                 <p>I am a passionate web developer with a unique blend of creativity and technical expertise.
                     <br>I am also pursuing a degree in electrical engineering, where i have honed my problem-solving skills and attention to detail.
                     <br>With a solid foundation in both design and development, I create websites that are not only visually appealing
@@ -123,105 +132,102 @@
                     <br>My goal is to deliver high-quality web solutions that exceed your expectations and help your business thrive online.
                     <br>Whether it is a simple brochure website or a complex web application, I'm here to help. Let's build something amazing together!</p>
             </div>
-          
+        </div>
 
+        <div class="skill">
+            <div class="head">
+                <h3>SKILLS</h3>
+                <p>Technical <span class="text">skills</span></p>
+            </div>
+            <div class="pi">
+                <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-xl space-y-8">
+                    <h1 class="text-3xl font-bold text-center text-gray-800">My Skills</h1>
+                    
+                    <!-- HTML Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-medium text-gray-700">HTML</span>
+                            <span id="html-percentage" class="text-sm font-semibold text-gray-500">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="html-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- CSS Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-medium text-gray-700">CSS</span>
+                            <span id="css-percentage" class="text-sm font-semibold text-gray-500">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="css-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-medium text-gray-700">JavaScript</span>
+                            <span id="js-percentage" class="text-sm font-semibold text-gray-500">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="js-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Figma Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-medium text-gray-700">Figma</span>
+                            <span id="figma-percentage" class="text-sm font-semibold text-gray-500">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="figma-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cont" id="contact">
+            <div class="head">
+                <h3>GET IN TOUCH</h3>
+                <p>CONTACT <span class="text">ME </span></p>
+                <p>I am currently open to full-time, contract or part-time opportunities in<br> Front End Development.</p>
+            </div>
+            
+            <div class="conts">
+                <div class="contacts">
+                    <p>Have an Awesome project idea?</p>
+                    <p><span class="text">Let's Discuss</span></p>
+                    <p><i class="fa-solid fa-phone"></i> <span class="text">+256 759027391</span></p>
+                    <p><i class="fa-solid fa-envelope"></i> <span class="text">namiremberedemptor@gmail.com</span></p>
+                    <p><i class="fa-solid fa-compass"></i> <span class="text"><a href="https://www.bing.com/maps?q=kampala+city+uganda&FORM=HDRSC6&cp=0.313602%7E32.581115&lvl=16.0">Kampala, Uganda</a></span></p>
+                </div>
+
+                <div class="container">
+                    <div class="message">
+                        <input type="text" id="name" autocomplete="off" placeholder=" " class="form_input"/>
+                        <label for="name">Full Name</label>
+                    </div>
+
+                    <div class="message">
+                        <input type="text" id="email" autocomplete="off" placeholder=" " class="form_input"/>
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="message">
+                        <textarea id="message" autocomplete="off" placeholder=" " class="form_textarea"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+
+                    <button class="submit-button">Send Message</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="skill">
-        <div class="head">
-        <h3>SKILLS</h3>
-        <p>Technical <class class="text">skills</class></p>
-        </div>
-         <div class="pi">
-        <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-xl space-y-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800">My Skills</h1>
-        
-        <!-- HTML Progress Bar -->
-        <div class="space-y-2">
-            <div class="flex items-center justify-between">
-                <span class="text-lg font-medium text-gray-700">HTML</span>
-                <span id="html-percentage" class="text-sm font-semibold text-gray-500">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div id="html-bar" class="progress-bar"></div>
-            </div>
-        </div>
-
-        <!-- CSS Progress Bar -->
-        <div class="space-y-2">
-            <div class="flex items-center justify-between">
-                <span class="text-lg font-medium text-gray-700">CSS</span>
-                <span id="css-percentage" class="text-sm font-semibold text-gray-500">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div id="css-bar" class="progress-bar"></div>
-            </div>
-        </div>
-
-        <!-- JavaScript Progress Bar -->
-        <div class="space-y-2">
-            <div class="flex items-center justify-between">
-                <span class="text-lg font-medium text-gray-700">JavaScript</span>
-                <span id="js-percentage" class="text-sm font-semibold text-gray-500">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div id="js-bar" class="progress-bar"></div>
-            </div>
-        </div>
-
-         <!-- Figma Progress Bar -->
-        <div class="space-y-2">
-            <div class="flex items-center justify-between">
-                <span class="text-lg font-medium text-gray-700">Figma</span>
-                <span id="figma-percentage" class="text-sm font-semibold text-gray-500">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div id="figma-bar" class="progress-bar"></div>
-            </div>
-        </div>
-        
-    </div>
-         </div>
-    </div>
-
-    <div class="cont" id="contact">
-        <div class="head">
-        <h3>GET IN TOUCH</h3>
-        <p>CONTACT <class class="text">ME </class></p>
-        <p>I am currently open to full-time, contract or part-time opportunities in<br> Front End Development.</p>
-        </div>
-        
-        <div class="conts">
-        <div class="contacts">
-            <p>Have an Awesome project idea?</p>
-            <p><class class="text">Let's Discuss</class></p>
-            <p><i class="fa-solid fa-phone"></i> <class class="text">+256 759027391</class></p>
-            <p><i class="fa-solid fa-envelope"></i> <class class="text">namiremberedemptor@gmail.com</class></p>
-            <p><i class="fa-solid fa-compass"></i> <class class="text"><a href="https://www.bing.com/maps?q=kampala+city+uganda&FORM=HDRSC6&cp=0.313602%7E32.581115&lvl=16.0">Kampala, Uganda</class></a></p>
-        </div>
-        
-        
-       <div class="container">
-        <!-- The HTML provided by the user, with corrected 'for' and 'id' attributes -->
-        <div class="message">
-            <input type="text" id="name" autocomplete="off" placeholder=" " class="form_input"/>
-            <label for="name">Full Name</label>
-        </div>
-
-        <div class="message">
-            <input type="text" id="email" autocomplete="off" placeholder=" " class="form_input"/>
-            <label for="email">Email</label>
-        </div>
-
-        <div class="message">
-            <textarea id="message" autocomplete="off" placeholder=" " class="form_textarea"></textarea>
-            <label for="message">Message</label>
-        </div>
-
-        <button class="submit-button">Send Message</button>
-    </div>
-        </div>
-    </div>
     
     <script src="portfolio.js"></script>
 </body>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Login/Signup Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+        }
+
+        .container {
+            position: relative;
+            width: 850px;
+            height: 550px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        /* The container for the forms, will slide horizontally */
+        .forms-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transition: all 0.6s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* Initial positions for forms */
+        .login-form {
+            left: 0;
+            z-index: 2;
+        }
+        
+        .register-form {
+            left: 50%;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        /* The container for the curved panels */
+        .panel-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        /* The blue background panel that moves */
+        .panel {
+            position: relative;
+            width: 200%;
+            height: 100%;
+            left: -100%;
+            background: #7494ec;
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+            display: flex;
+        }
+
+        /* The individual panels (left and right) */
+        .panel-content {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            text-align: center;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        /* Initial positions for panels */
+        .panel-left {
+            transform: translateX(-20%);
+        }
+
+        .panel-right {
+            transform: translateX(0);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: -10px 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 14.5px;
+            margin: 15px 0;
+            text-align: center;
+            color: #555;
+        }
+
+        .panel-content h1,
+        .panel-content p {
+            color: #fff;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 13px 50px 13px 20px;
+            background: #eee;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-box input::placeholder {
+            color: #888;
+            font-weight: 400;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #888;
+        }
+        
+        .btn {
+            width: 70%;
+            height: 48px;
+            background: #7494ec;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .panel-content .btn {
+            width: 160px;
+            background: transparent;
+            border: 2px solid #fff;
+            box-shadow: none;
+            margin-top: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            font-size: 24px;
+            color: #333;
+            margin: 0 8px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #eee;
+        }
+
+        /* Active state classes for animation */
+        .container.active .register-form {
+            transform: translateX(-100%);
+            opacity: 1;
+            z-index: 2;
+        }
+        
+        .container.active .login-form {
+            transform: translateX(100%);
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.active .panel-container {
+            transform: translateX(-100%);
+        }
+
+        .container.active .panel {
+            transform: translateX(50%);
+        }
+
+        .container.active .panel-left {
+            transform: translateX(0);
+        }
+
+        .container.active .panel-right {
+            transform: translateX(20%);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Login Form -->
+        <div class="forms-container login-form">
+            <form action="#">
+                <h1>Login</h1>
+                <p>or use your account</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="forms-container register-form">
+            <form action="#">
+                <h1>Registration</h1>
+                <p>or use your email for registration</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+
+        <!-- Panels for animation -->
+        <div class="panel-container">
+            <div class="panel">
+                <div class="panel-content panel-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn" id="loginBtn">Login</button>
+                </div>
+                <div class="panel-content panel-right">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="btn" id="registerBtn">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('registerBtn');
+        const loginBtn = document.getElementById('loginBtn');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add('active');
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
