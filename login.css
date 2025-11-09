@@ -9,7 +9,7 @@
     list-style: none;
 }
 
-/*Body Styles*/
+/* Body Styles */
 body {
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
     background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
 
-/*container*/
+/* Container */
 .container {
     position: relative;
     width: 850px;
@@ -122,18 +122,19 @@ form {
     font-weight: 600;
 }
 
-.social-icons{
+.social-icons {
     display: flex;
     justify-content: center;
 }
 
-.social-icons a{
+.social-icons a {
     display: inline-flex;
     padding: 10px;
     border: 2px solid #ccc;
     font-size: 24px;
     color: #333;
     margin: 0 8px;
+    border-radius: 50%;
 }
 
 .toggle-box {
@@ -154,11 +155,11 @@ form {
     transition: 1.8s ease-in-out;
 }
 
-.container.active.toggle-box::before{
+.container.active.toggle-box::before {
     left: 50%;
 }
 
-.toggle-panel{
+.toggle-panel {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -176,29 +177,127 @@ form {
     transition-delay: 1.2s;
 }
 
-.container.active.toggle-panel.toggle-left{
+.container.active.toggle-panel.toggle-left {
     left: -50%;
     transition-delay: 0.6s;
 }
 
-.toggle-panel.toggle-right{
+.toggle-panel.toggle-right {
     right: -50%;
     transition-delay: 0.6s;
 }
 
-.container.active.toggle-panel.toggle-right{
+.container.active.toggle-panel.toggle-right {
     right: 0;
     transition-delay: 1.2s;
 }
 
-.toggle-panel p{
+.toggle-panel p {
     margin-bottom: 20px;
 }
 
-.toggle-panel .btn{
+.toggle-panel .btn {
     width: 160px;
     height: 46px;
     background: transparent;
     border: 2px solid #fff;
     box-shadow: none;
+}
+
+/* ------------------------------------------ */
+/* ✅ RESPONSIVE DESIGN ADDITIONS BELOW */
+/* ------------------------------------------ */
+
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 992px) {
+    .container {
+        width: 700px;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .form-box {
+        width: 100%;
+        position: relative;
+        right: 0;
+        padding: 30px;
+    }
+
+    .toggle-panel {
+        display: none;
+    }
+
+    .toggle-box::before {
+        display: none;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    .input-box {
+        margin: 20px 0;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin: 10px;
+    }
+
+    .form-box {
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .input-box input {
+        font-size: 14px;
+        padding: 12px 40px 12px 15px;
+    }
+
+    .btn {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .container p {
+        font-size: 13px;
+    }
+}
+
+/* Extra-small screens (below 400px) */
+@media (max-width: 400px) {
+    .input-box input {
+        font-size: 13px;
+        padding: 10px 35px 10px 12px;
+    }
+
+    .btn {
+        font-size: 13px;
+        height: 42px;
+    }
+
+    .social-icons a {
+        margin: 0 5px;
+        font-size: 16px;
+    }
 }
